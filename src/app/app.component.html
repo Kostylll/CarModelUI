@@ -1,0 +1,38 @@
+<div class="container">
+  <h1>ONCAR</h1>
+  <div class="button-container">
+    <button class="button" (click)="adicionarCarro()">Adicionar Carro</button>
+    <button class="button" (click)="financiar()">Financiar Carro</button>
+  </div>
+
+  <div class="card">
+    <div class="card-body">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Modelo</th>
+            <th scope="col">Cor</th>
+            <th scope="col">Tipo</th>
+            <th scope="col">Preço</th>
+            <th scope="col">Descrição</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let car of cars">
+            <td>{{ car.model }}</td>
+            <td>{{ car.color }}</td>
+            <td>{{ car.type }}</td>
+            <td>{{ car.price }}</td>
+            <td>{{ car.description }}</td>
+            <td>
+              <button class="button-left" (click)="deleteCar(car)">
+                <i class="material-icons">delete</i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

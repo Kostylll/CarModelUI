@@ -1,0 +1,43 @@
+<div class="form-container">
+    <h1>Formulário de Análise de Crédito</h1>
+    <form [formGroup]="creditForm">
+        <div class="form-group">
+            <label>Nome:</label>
+            <input type="text" formControlName="nome" placeholder="Digite o nome" required class="form-control">
+        </div>
+        <div class="form-group">
+            <label>Sobrenome:</label>
+            <input type="text" formControlName="sobrenome" placeholder="Digite o sobrenome" required
+                class="form-control">
+        </div>
+        <div class="form-group">
+            <label>Idade:</label>
+            <input type="number" formControlName="idade" placeholder="Digite a idade" required class="form-control">
+        </div>
+        <div class="form-group">
+            <label>Email:</label>
+            <input type="email" formControlName="email" placeholder="Digite o email" required class="form-control">
+        </div>
+        <div class="form-group">
+            <label>Documento:</label>
+            <input type="text" formControlName="documento" placeholder="Digite o documento" required
+                class="form-control">
+        </div>
+        <div class="form-group">
+            <label>Selecione o Carro: </label>
+            <select name="allCars" id="allCars" class="form-control">
+                <option value="">Selecione um carro:</option>
+                <option *ngFor="let car of cars" [value]="car.id">{{ car.model }} {{ car.type }} {{ car.price }}R$
+                </option>
+            </select>
+        </div>
+        <div *ngIf="resultado !== null" class="resultado">
+            <p>Resultado da Análise:</p>
+            <p>{{ resultado }}</p>
+        </div>
+        <div class="form-group">
+            <button type="button" class="button" (click)="analisarCredito()">Analisar Crédito</button>
+        </div>
+     
+    </form>
+</div>

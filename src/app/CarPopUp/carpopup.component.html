@@ -1,0 +1,28 @@
+<div class="form-container">
+  <h1>Adicionar Novo Carro</h1>
+  <form [formGroup]="register">
+    <div class="form-group">
+      <label>Modelo:</label>
+      <input type="text" formControlName="modelo" placeholder="Digite o modelo" required class="formControl">
+    </div>
+    <div class="form-group">
+      <label>Tipo:</label>
+      <input type="text"  formControlName="tipo" placeholder="Digite o Tipo" required>
+    </div>
+    <div class="form-group">
+      <label>Cor:</label>
+      <input type="text"  formControlName="cor" placeholder="Digite a cor" required>
+    </div>
+    <div class="form-group">
+      <label>Preço:</label>
+      <input type="text"  formControlName="preco" placeholder="Digite o preço" required>
+    </div>
+    <div class="form-group">
+      <label>Descrição:</label>
+      <textarea  formControlName="descricao" placeholder="Digite a descrição" rows="4" required></textarea>
+    </div>
+    <div class="form-group">
+      <button type="button" class="button" (click)="saveCar()">Adicionar Carro</button>
+    </div>
+  </form>
+</div>
